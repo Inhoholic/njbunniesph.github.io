@@ -1,13 +1,11 @@
+/* General body styles */
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Prevents scrolling */
     font-family: Arial, sans-serif; /* Example font family */
     background-color: #000; /* Fallback black background */
 }
 
+/* Background image styles */
 .background-image {
     position: fixed;
     top: 0;
@@ -25,40 +23,11 @@ body {
     filter: brightness(20%) contrast(80%) grayscale(0); /* Adjust brightness and contrast for darker effect */
 }
 
-.container {
-    position: relative;
-    z-index: 1; /* Places content above the background image */
-    text-align: center;
-    padding: 20px; /* Adjust padding as needed */
-}
-
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Prevents scrolling */
-    font-family: Arial, sans-serif; /* Example font family */
-    background-color: #000; /* Fallback black background */
-}
-
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Moves the background image behind other content */
-}
-
 .background-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire container */
-    opacity: 0.5; /* Adjust opacity for dim effect */
-    filter: brightness(20%) contrast(80%) grayscale(0); /* Adjust brightness and contrast for darker effect */
+    filter: brightness(50%); /* Adjust brightness for the background image */
 }
 
+/* Container styles */
 .container {
     position: relative;
     z-index: 1; /* Places content above the background image */
@@ -66,6 +35,7 @@ body {
     padding: 20px; /* Adjust padding as needed */
 }
 
+/* Banner image styles */
 .banner {
     max-width: 100%; /* Ensure the banner image spans the container width */
     height: auto; /* Automatically adjusts height while maintaining aspect ratio */
@@ -73,6 +43,7 @@ body {
     max-height: 10rem; /* Limit maximum height of the banner */
 }
 
+/* Centered photo styles */
 #centered-photo {
     max-width: calc(100% - 20px); /* Adjust max-width to account for padding */
     max-height: calc(100vh - 240px); /* Adjust max-height to fit within viewport */
@@ -82,40 +53,46 @@ body {
     display: block; /* Ensures the image behaves like a block element */
 }
 
-.centered-image {
-    width: 100%; /* Full width by default */
-    height: auto; /* Automatically adjusts height while maintaining aspect ratio */
-    max-width: 40rem; /* Maximum width when screen is larger */
+/* Row images container styles */
+.row-images {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 0;
 }
 
-.background-image img {
-    filter: brightness(50%); /* Adjust brightness for the background image */
+/* Individual row image styles */
+.row-image {
+    max-width: 25%; /* Adjust maximum width for desktop */
+    width: 100%; /* Ensure full width on mobile */
+    height: auto; /* Automatically adjust height */
+    margin-bottom: 10px; /* Adds space between images */
+    border-radius: 10px; /* Rounded corners */
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .row-images {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        align-items: center; /* Center images vertically */
+    }
 
-#centered-photo {
-    max-width: calc(100% - 20px); /* Adjust max-width to account for padding */
-    max-height: calc(100vh - 240px); /* Adjust max-height to fit within viewport */
-    width: auto; /* Ensures the image scales proportionally */
-    height: auto; /* Ensures the image scales proportionally */
-    margin: 0 auto; /* Center the image horizontally */
-    display: block; /* Ensures the image behaves like a block element */
+    .row-image {
+        max-width: 80%; /* Adjust width for smaller screens */
+    }
 }
 
-.centered-image {
-    width: 100%; /* Full width by default */
-    height: auto; /* Automatically adjusts height while maintaining aspect ratio */
-    max-width: 40rem; /* Maximum width when screen is larger */
+/* Custom footer styles */
+.custom-footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust opacity here */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
 }
 
-.background-image img {
-    filter: brightness(50%); /* Adjust brightness for the background image */
-}
-
-.version {
-    position: absolute;
-    bottom: 10px; /* Adjust distance from the bottom */
-    right: 10px; /* Adjust distance from the right */
+/* Version span inside footer */
+.custom-footer .version {
     color: #fff; /* White text color */
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 10px; /* Adjust font size as needed */
 }
